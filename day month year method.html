@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*clock*/
+        h2{
+            font-size:100px;
+            text-align:center;
+            font-family: Verdana;
+         }
+         /*css javasccriopt*/
+         #main{
+            color:red;
+            text-align: center;
+            font-size: 50px;
+            margin-top:50px;
+            cursor: pointer;
+            border: 2px solid blanchedalmond;
+            width: 450px;
+            margin-left: 600px;
+            transition:2s;
+        }
+        /*#main2{
+            color:red;
+            text-align: center;
+            masrgin-top: 50px;
+            font-size: 50px;
+            transition: 2s;
+        }
+        
+        #main2:hover{
+            color:green;
+            font-size: 100px;
+        }*/
+    </style>
+</head>
+<body onload="showTime()">
+    <h1 id="res"></h1>
+<button onclick="getdate()">Date</button>
+<button onclick="getyear()">Year</button>
+<button onclick="month()">Month</button>
+<button onclick="hours()">Hours</button>
+<button onclick="minute()">Minute</button>
+<button onclick="second()">Second</button>
+<button onclick="todate()">date</button>
+<button onclick="day()">day</button>
+<button onclick="time()">time</button>
+
+<br/>
+<br/>
+<br/>
+<input type="text" name="u_name"/>
+<button onclick="getname()">submit</button>
+<h1 id="name"></h1>
+<br/>
+<br/>
+<!--setinterval-->
+<button onclick="test()">alert</button><br/><br/>
+<button onclick="test2()">alert2</button>
+<br/>
+<br/>
+<!--clocl-->
+<h2></h2>
+<br/>
+<br/>
+<!--css javacript-->
+<div id="main" onmouseenter="modify()" onmouseleave="unmodify()">
+    <h6 id="main2">shraddha</h6>
+</div>
+<br/>
+<br/>
+<button onclick="start()">start</button>
+<button onclick="stop()">stop</button>
+
+<br/>
+<br/>
+<button onclick="start2()">start2</button>
+<button onclick="stop2()">stop2</button>
+<h3 id="h3"></h3>
+<button onclick="stop4()"> stop</button>
+</body>
+
+<script>
+    var date=new Date();
+    function getdate(){
+    document.getElementById("res").innerText =date;
+    }
+    function getyear(){
+    document.getElementById("res").innerText =date.getFullYear();
+    }
+    function month(){
+        var month=["january","febraury","march","april","may","june","july","august","september","october","november","december"]
+        document.getElementById("res").innerText=month[date.getMonth()]; 
+        //document.getElementById("res").innerHTML =date.getMonth();     
+        //get month array me store karta h month startin index is 0 so if output is 4 the month is may
+    }
+    function hours(){
+        document.getElementById("res").innerText =date.getHours();
+    }
+    function minute(){
+        document.getElementById("res").innerText =date.getMinutes();
+    }
+    function second(){
+        document.getElementById("res").innerText =date.getSeconds();
+    }
+    function todate(){
+        document.getElementById("res").innerText =date.getDate();
+    }
+    function day(){
+        document.getElementById("res").innerText =date.getDay(); //start from sunday index 0
+    }
+    function time(){
+        document.getElementById("res").innerText =date.getTime(); //in milliseconds from 1 jan 1970
+    }
+   // var b=["car1","car2"]; //in js array is also an oject
+   // var a="hello";
+    //var date=new Date();
+    //document.write(typeof a); //string
+    //document.write(typeof b); //object
+    //document.write(typeof date); //object
+
+
+    function getname(){
+        var uname=document.getElementsByName("u_name")[0].value;
+       // document.getElementById("name").innerHTML=uname;
+       document.getElementsByName("u_name")[0].value=" "     //value from the search bar will go
+       document.getElementsByTagName("h1")[1].innerHTML=uname;
+        console.log(uname);
+    }
+     
+    //setinterval
+    function test(){
+        setInterval(
+            function(){
+                alert("sdsaff");
+                //console.log("dad");
+            },
+            2500
+        )
+    }
+    function test2(){
+        setTimeout(
+            function(){
+                alert("sdsaffss");  //document.write("hreloo") if button pe click karte to button replace hota hreloo se beacuse document.write replace kar ke likhta h if kah print hona h uska space nahi define h
+                //console.log("dad");
+            },
+            2500
+        )
+    }
+
+    //clock
+    function showTime(){
+        var d=new Date();
+        var h=d.getHours();
+        var m=d.getMinutes();
+        var s=d.getSeconds();
+        var session = "AM";
+        if(h>=12)
+        {
+            session="PM";
+        }
+        if(h>12)
+        {
+            h=h-12;
+        }
+       
+       h= h<10 ? "0"+h:h;
+       m= m<10 ? "0"+m:m;
+       s= s<10 ? "0"+s:s;
+        var time=h+":"+m+":"+s +" "+ session ;
+        document.getElementsByTagName("h2")[0].innerText=time;
+        setTimeout(showTime,1000)
+    }
+
+    //css javascript
+    function modify(){
+        document.getElementById("main").style.fontSize="100px";
+        document.getElementById("main").style.color="blue ";
+    }
+    function unmodify(){
+        document.getElementById("main").style.fontSize="50px";
+        document.getElementById("main").style.color="red";
+    }
+
+    //clearTimeout
+     var my;
+     function start(){
+        my=setTimeout(
+            function(){
+            document.write("hello");
+            },5000
+        )
+     }
+     function stop(){
+        clearTimeout(my);
+        alert("timeout stopped");
+     }
+     //clearInterval
+       var my2;
+       function start2()
+       {
+        my2=setInterval(
+            function(){
+                //alert("hello");
+                console.log('hi');
+            },
+            2500
+        )
+       }
+       function stop2(){
+        clearInterval(my2);
+        alert("clearinterval")
+       }
+       var my3=setInterval(count,1000)
+       var c=0;
+       function count(){
+        document.getElementById('h3').innerText=c;
+        c++;
+       }
+       function stop4(){
+        clearInterval(my3);
+       }
+    
+</script>
+</html>

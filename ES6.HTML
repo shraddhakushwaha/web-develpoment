@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//this keyword in es6
+
+//es5
+    // const person={
+   //test(){
+    // var self =this;
+    //setTimeout(function(){
+      // console.log(self);
+    // },2000);
+  // },
+ //};
+//person.test();
+
+//es6 
+const person={
+   test(){
+     var self =this;
+     setTimeout(()=>{
+       console.log(self);  //same output test object
+       
+     },2000);
+     setTimeout(function(){
+       console.log(self);   //same output test object
+       
+     },2000);
+     setTimeout(()=>{
+       console.log(this);  //output test object  because arrrow function parent ye object ke according hi work karta h
+       
+     },2000);
+     setTimeout(function(){
+       console.log(this);   //same output window object because function key word this rebind kar deta h jaha pe call hota h
+       
+     },2000);
+   },
+ };
+person.test();
+
+//javascript promises
+const myPromise= new Promise((resolved,rejected)=> {
+  const a=5,b=6;
+  const c=a+b;
+  if(c===4){
+    resolved(`yes!,${a} +${b} =4`);
+  }else{
+    rejected(`no! ,${a} +${b} !=4`);
+  }
+});
+
+myPromise.then((m) => {
+console.log(m);
+}).catch((err)=>{
+console.log(err);
+})
+
+
+//class in javascript
+class Girl{
+  constructor(uname,uage){
+  this.name=uname;
+  this.age=uage;
+  }
+  detail(){
+    console.log(`the age of ${this.name} is ${this.age} year`);
+  }
+}
+//object of class
+const p=new Girl("wscube tech",11);
+p.detail();
+const q=new Girl("jhfjr",9);
+q.detail();
+</script>
+</body>
+</html>
+
+

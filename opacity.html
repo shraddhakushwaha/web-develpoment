@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .opacity{
+            height: 100px;
+            width:100px;
+            background-color: rgba(200,0,0,0.6);
+            opacity: 0.4;
+            transition: 1s;
+        }
+        .opacity:hover{
+            opacity: 0.8;
+        }
+        .main{
+            height: 400px;
+            width: 400px;
+            border:2px solid black;
+            margin: auto;
+            margin-top:100px;
+            position:relative;
+        }
+        .button{
+            width: 100%;
+            background-color:rgb(91, 85, 85,0.7);
+            font-size: 30px;
+            color: aliceblue;
+            position: absolute;
+            left:0px;
+            bottom:-40px;
+            opacity: 0;
+            transition: 1s;
+
+        }
+        .main:hover .button{
+            bottom: 0px;
+            opacity: 1;
+
+        }
+        h2{
+            display: inline;/* none bhi hota to display nahi karega and block bhi hota  h jo by default hota h
+            display:inline-block;
+            display:none;
+            display:block;
+            display:list-item;   block ye saath list bhi*/
+        }
+        .flex{
+            height: 400px;
+            width:400px;
+            border: 2px solid black;
+            margin:auto;
+            display: flex; /* flex sari cheez ko ek row me la deta h wahi float left bhi karta h but flex ko chahe
+                               jitna no of element h vo ek hi row me rakhega bhut float if space nahi h to next line 
+                            me le jayega*/
+        }
+        .flex div{
+            height: 50px;
+            border: 2px solid red;
+            width:100px;
+            float:right;
+        }
+        .resize{
+            height: 300px;
+            width:300px;
+            border:2px solid black;
+            font-size: 30px;
+            overflow:hidden;
+            resize:both;   /*both means can be rezied from both vertical and horizontal default none hota h matlab no resize 
+            resixe:verttical;
+            resize:horizontal;              
+            */
+            text-indent: 40px;   /* starting letter shift 40px aage as we see in bool staring ke letter thoda age se start hota h*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="opacity">
+    </div>
+    
+    <div class="main">
+        <img src="Untitled1.jpg" height="100%" width="100%">
+        <input type="button" name="" value="Add to cart" class="button">
+    </div>
+    <div class="display">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat possimus consequatur, asperiores
+         assumenda similique dolore obcaecati corporis <h2>hello everyone</h2>officia harum ad repellendus ipsam error ipsum, ea
+          voluptatum nam ex maxime soluta.
+    </div>
+    <br/>
+    <br/>
+    <div class="flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <div class="resize">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempore fuga maiores assumenda 
+            reiciendis excepturi, aspernatur laborum ducimus iusto 
+            expedita sit. Placeat natus molestias tenetur rem nihil eligendi impedit molestiae.</p>
+        </div>
+    
+</body>
+</html>

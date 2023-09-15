@@ -1,0 +1,218 @@
+<!--show hide toogle button-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        font-family: verdana;
+    }
+    body{
+        background:rgb(12, 12, 39);
+    }
+    form{
+        width: 350px;
+        margin: auto;
+    }
+    div{
+        margin: 10px;
+    }
+    label{
+        width: 200px;
+        display: block;
+        float: left;
+        font-size:20px;
+        color: #fff;
+    }
+    input{
+        display: block;
+        float:left;
+        font: size 20px;
+    }
+    .clear{
+        clear: both;
+    }
+    button{
+        width: auto;
+        padding: 5px;
+        font-size: 16px;
+        border: none;
+        box-shadow: 0px 0px 2px 1px grey;
+    }
+    .password-check{
+        color:grey;
+        display: flex;
+    }
+    </style>
+</head>
+<body>
+   <form action="#" method="post" onsubmit="return validate()">
+<fieldset>
+    <legend style="color:#fff";>Login form</legend>
+    <div>
+        <label>User name</label>
+        <input type="text" name="" onkeyup="white(this.value)"/>
+        <div class="clear"></div>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="" id="password"  onkeyup="white(this.value);passcheck(this.value)"/>  <!--we can call two function on same event like this-->
+        <div class="clear"></div>
+    </div>
+    <div>
+        <label> Confirm Password</label>
+        <input type="password" name="" id="confirmpassword" onkeyup="check(this)"/>
+        <div class="clear"></div>
+        <error style="color:red" id="alert"></error><br/>
+        <error style="color:red" id="alert1"></error><br/>
+        <error style="color:red" id="alert2"></error>
+    </div>
+    <br/>
+    <br/>
+    <div>
+        <label class="password-check"> 8 characters</label>
+        <label class="password-check"> 1 lower case character</label>
+        <label class="password-check"> 1 upper case character</label>
+        <label class="password-check"> 1 numerical character</label>
+        <label class="password-check"> 1 special character</label>
+ </div>
+    <div>
+        <input type="submit" value="submit" id="submit"></div><br/>
+       <div> <button type="button" onclick="toggle(this)">Show Password</button>
+    </div>
+</fieldset>
+</form>   
+<br/>
+<br/>
+
+<script>
+     function toggle(elem){
+           var password=document.getElementById('password');
+           var type=password.getAttribute('type');
+           if(type==='password'){
+           password.setAttribute('type','text');
+           elem.innerText='Hide password'
+           }
+           else{
+            password.setAttribute('type', 'password')
+            elem.innerText = "show password";
+           }
+     } 
+
+     var pass=document.getElementById('password');
+     var flag=1;  //no error 0- error
+     function check(elem1){
+        if(elem1.value.length>0){
+            if(elem1.value!=pass.value)
+            {
+                document.getElementById('alert').innerText="confirm password does not match";
+                flag=0;
+            }
+            else{
+            document.getElementById('alert').innerText="";
+            flag=1;}
+        }
+        else{
+
+            document.getElementById('alert').innerText=" please enter confirm password";
+            flag=0;  
+        }
+     }
+     function validate()
+     {
+        if(flag==1)
+        {
+            return true;
+        }else{
+            return false;
+        }
+     }
+
+     //getModifierState() function -detecting CAPS LOCK in html form using javaScript
+     window.addEventListener('keyup',event=>{
+        var iscaps=event.getModifierState("CapsLock");
+        if(iscaps){
+            //true
+             document.getElementById('alert1').innerText="WARNING! CapsLock is on";
+        }
+        else{
+            //false
+            document.getElementById('alert1').innerText="";
+        }
+     })
+      
+     //white space or blank space validation using regexp
+     var pattern=/\s/g;
+     function white(data){
+        var isSpace=pattern.test(data);
+        if(isSpace)
+        {
+              document.getElementById('alert2').innerText="space is not allowed"        }
+        else{
+            document.getElementById('alert2').innerText="";
+        }
+     }
+
+
+       //RegExp  (regular expression)
+     var pattern2 =/[a-z][0-9]/ig;
+        var str="wscube123techD1";
+        console.log(pattern2.exec(str));
+        console.log(pattern2.test(str));
+        console.log(pattern2.toString(str));
+        var pattern1=new RegExp('(?=.*[a-z])')  //atleast one lowercase
+        var str1="DSFDFDA"
+        console.log(pattern1.test(str1));
+
+        //password pattern validation
+
+        function passcheck(data1)
+        { 
+        var passclass=document.getElementsByClassName("password-check");
+          const lowerCase=new RegExp('(?=.*[a-z])');
+          const upperCase=new RegExp('(?=.*[A-Z])');
+          const number=new RegExp('(?=.*[0-9])');
+          const specialChar=new RegExp('(?=.*[!@#\$%\^&\*])');
+          const eightchar=new RegExp('(?=.{8,})');
+           
+          if(eightchar.test(data1))
+          {
+              passclass[0].style.color="green";
+          }
+          else{
+            passclass[0].style.color="grey";
+          }
+        if(lowerCase.test(data1))
+          {
+              passclass[1].style.color="green";
+          }
+          else{
+            passclass[1].style.color="grey";
+          }
+          if(upperCase.test(data1))
+          {
+              passclass[2].style.color="green";
+          }
+          else{
+            passclass[2].style.color="grey";
+          }
+          if(number.test(data1))
+          {
+              passclass[3].style.color="green";
+          }
+          else{
+            passclass[3].style.color="grey";
+          }
+          if(specialChar.test(data1))
+          {
+              passclass[4].style.color="green";
+          }
+          else{
+            passclass[4].style.color="grey";
+          }
+        }
+</script>
+</body>
+</html>

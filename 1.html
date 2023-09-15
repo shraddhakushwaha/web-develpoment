@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body> 
+    <h1>ORDERED LIST</h1>
+    <ol type="A">   <!--type="1" type="a" type="i"type="I" -->
+        <li>html
+            <ol type="a">
+                <li>hfj</li>
+                <li>dcdff</li>
+            </ol>
+        </li>
+        <li>css</li>
+        <li>javascript</li>
+    </ol>
+    <h1>UNORDERED LIST</h1>  <!--type="circle" type="disc" type="square"-->
+    <ul type="circle">
+        <li>html
+            <ol type="a">
+                <li>hfj</li>
+                <li>dcdff</li>
+            </ol>
+        </li>
+        <li>css
+            <ul type="square">
+                <li>hfj</li>
+                <li>dcdff</li>
+            </ul>
+        </li>
+        <li>javascript</li>
+    </ul>
+    <img src="Untitled.png" title="html image" alt="image missing" height="100px" width="100px"/><br>
+    <a href="https://www.youtube.com/watch?v=srBwRDiC3Pg&list=LL&index=2" target="_blank">this is website</a><br>
+    <a href="Untitled.png" target="_blank">this is image</a><br>
+    <a href="Untitled.png" target="_parent">this <mark>is</mark> image</a><br>
+    <center>a<sup>2<sup>3</sup>+b</center>
+    <center>log<sub>2</sub>45</center>
+    <!--center tag do not center the tag it place text at the center-->
+    <center><meter min="0" max="100" value="50"></meter></center> 
+    <meter min="0" max="100" value="50"></meter><br>
+    <table border="2" bgcolor="pink" cellspacing="5" cellpadding="10" height="100" width="500"> <!--align="center"-->
+        <thead>
+            <tr bgcolor="yellow" > <!--align="left"-->
+                <th bgcolor=" green">couse</th>
+                <th>fees</th>
+                <th>time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">web development</td>
+                <td>70000</td>
+                <td>1 am</td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>machine learning</td>
+                <td  bgcolor="orange" rowspan="2">70000</td>
+                <td>2 am</td>
+            </tr>
+            <tr>
+                <td>deep learning</td>
+                <td >70000</td>
+                <td>3 am</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <form>
+        <fieldset>
+            <legend>enquiry</legend>
+            read:<input type="text" name="readonly" value="for reading" readonly/> <!--iska value brower me jayega-->
+            <br/>
+            <br/>
+            read:<input type="text" name="readonly" value="for reading" didabled/> <!--ye disabled h iska value browser me nahi jayega-->
+            <br/>
+            <br/>
+        name:<input  type="text" name="name" value="" placeholder="enter your name" required="" autofocus=" " maxlength="20"/>
+        <br/>
+        <br/>
+        email:<input type="email" placeholder="enter your email"/>
+        <br/>
+        <br/>
+        password:
+        <input type="password" name="password" placeholder="enter your password"/>
+        <br/>
+        <br/>
+        age:
+        <input type="number" name="age" min="1" max="25"/>
+        <br/>
+        <br/>
+        address:<textarea></textarea>
+        <br/>
+        <br/>
+        gender:
+        <input type="radio" name="gender" value="m"/>male
+        <input type="radio" name="gender" value="f"/>female
+        <input type="radio" name="gender" value="o"/>other
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        date:
+        <input type="date" name="date">
+        <br/>
+        <br/>
+        date time:
+        <input type="datetime-local" name="datetime">
+        <br/>
+        <br/>
+        time:
+        <input type="time" name="time">
+        <br/>
+        <br/>
+        month:
+        <input type="month" name="month">
+        <br/>
+        <br/>
+        week:
+        <input type="week" name="week">
+        <br/>
+        <br/>
+        range:
+        <input type="range" name="range" min="0" max="200" value="150"/>
+        <br/>
+        <br/>
+        country:<select>
+            <option>select your country</option>
+            <optgroup label="Asia">
+            <option>India</option>
+            <option>China</option>
+            <option>thailand</option>
+        </optgroup>
+        <option>usa</option>
+        </select>
+        <br/>
+        <br/>
+        image:
+        <input type="file" name="image">
+        <br/>
+        <br/>
+        color:
+        <input type="color" name="color" value="#1d8c79"/>
+        <br/>
+        <br/>
+        hobbies:
+        <input type="checkbox" name="hobbies[]" checked=""/> dancing
+        <input type="checkbox" name="hobbies[]"/> singing
+        <input type="checkbox" name="hobbies[]"/> painting
+        <br/>
+        <br/>
+        secret: 
+        <input type="hidden" name="secret"/>
+        <br/>
+        <br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </fieldset>
+    </form>
+
+</body>
+</html>

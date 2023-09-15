@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openwin()">open wscube</button>
+    <button onclick="closewin()">close wscube</button>
+    <br/>
+    <br/>
+    <h1></h1>
+    <button  onclick="window.history.forward();">forward</button>
+    <button onclick="window.history.back();">back</button>
+    <button onclick="window.history.go(2);">go</button>
+    <!--
+        0--first
+        1--youtube
+        2--spotify
+        -0,-1,-2... number go backward
+    -->
+    <br/>
+    <br/>
+    <button onclick="test()">avl height</button>
+    <br/>
+    <br/>
+    <button onclick="getotp()">getotp</button>
+    <br/>
+    <br/>
+    <!--this object will be button for button (when click ek dom create hota h matlab click hote hi object create hoga and uss object ko this se manipulate kar sakte h)-->  
+    <button onclick="this.style.display='none'">click me to hide me</button>
+    <button onclick="this.style.background='red'">click me to change color</button>
+    <button onclick="remove(this)">click me to remove me</button>
+    <br/>
+    <br/>
+    <!--add event listener-->
+    <div id="counter"> </div>
+    <button id="event">Click me event</button>
+    <br/>
+    <br/>
+    <!--remove event listener-->
+    <button id="stop-event" onclick="stopevent()">click me to stop event</button>
+    <br/>
+    <br/>
+    </body>
+<script>
+    //close and open window
+    var win;
+    function openwin() {
+       win= window.open("https://www.wscubetech.com","width=500px" ,"height=500 px");
+    }  
+    function closewin()
+    {
+        win.close();
+    }
+
+    // history
+    var c=window.history.length;
+     document.getElementsByTagName('h1')[0].innerText=c; 
+
+     // window screen object
+      function test(){
+        var height=screen.availHeight;
+        alert(height);
+      }
+
+      //math object
+      var x=Math.round(3.96);
+      document.write("<h1>" + x + "</h1>")
+     
+      function getotp(){
+        var y=Math.random()*10000;
+        alert(y);
+        var otp=Math.floor(y);
+        document.write("<h1>" + otp + "</h1>");
+      }
+
+      //this keyword
+      var z=this;     
+      alert(z);       //object  window output golobal object is window
+      var person={
+        firstName:"shraddha",
+        secondName:"kushwaha",
+        fullName:function(){
+            return this.firstName+this.secondName;
+        }
+      };
+      document.write("<h1>" +person.fullName()); 
+    
+        function remove(elem){
+            elem.style.display='none';
+        }
+
+        //event listener
+      var i=0;
+      document.getElementById('event').addEventListener('mouseenter',function()
+      {
+        document.getElementById('counter').style.background='green';
+      })
+      document.getElementById('event').addEventListener('click',counter);
+      function counter(){
+       
+        document.getElementById('counter').style.backgroundColor='red';
+        document.getElementById('counter').innerText=i;
+        i++;
+      }
+      //remove event listener
+       function stopevent(){
+      document.getElementById('event').removeEventListener('click', counter)
+       }
+</script>
+</html>

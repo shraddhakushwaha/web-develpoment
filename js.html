@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+      welcome to webcube id
+    </div>
+    <div class="main">
+        welcome to webcube class
+      </div>
+      <div class="main">
+        welcome to webcube class
+      </div>
+    <input type="text" name="name" id="name"/>
+    <button onclick="greet()">greet</button>
+    <div class="greet">
+    </div>
+    name: <i id="res"></i>
+    <br/>
+    <button onclick="call()">call</button>
+    <br/>
+    <h1 id="res1"></h1>
+    <button onclick="pop()">pop</button>
+    <button onclick="push()">push</button>
+    <button onclick="shift()">shift</button>
+    <button onclick="slice()">slice</button>
+    <button onclick="reverse()">reverse</button>
+    <br/>
+    <br/>
+</body>
+<script type="text/javascript">
+   // alert("hello");
+    //prompt("enter your name");
+    //document.write("<h1> hello</h1>");
+    //confirm("do you want to leave this page?");
+    //console.log("3+@");
+     //var x=document.getElementById("main").innerHTML
+    document.getElementById("main").innerHTML="<h1>welcome to webcube</h1>";  //inner htmal replace the old one with new one so wjhg  will be on sreen replacin old welcome to webcube
+    //console.log(x)
+     //var x=document.getElementsByClassName("main");
+    // var x=document.getElementsByClassName("main") [0];
+    //var x=document.getElementsByClassName("main") [0].innerHTML;
+     document.getElementsByClassName("main") [0].innerHTML="hello"; //[0] means if two class of same name then first will be 0 the 1 and so on.
+     document.getElementsByClassName("main") [1].innerHTML="hello every one";
+     //console.log(x);
+     function greet(){
+      var name=document.getElementById('name').value;
+       var string ="hello "+name;
+      document.getElementsByClassName('greet')[0].innerHTML=string;
+     }
+     function call(){
+      var name=prompt("enter your name"," ")
+      document.getElementById("res").innerHTML=name
+     }
+     
+     var cars=["car1","car2","car3","car4","car5"]
+     cars.forEach(car);
+     function car(item,index,array){
+      array[index]=item+"9";
+     }
+     cars.forEach(print);
+     function print( item,index){
+      document.write(index +"-" +item +"<br>");
+     }
+     var fruits=["mango","guava","banana","watermelon"];
+     var vegetable=["potato","tomato","ladyfinger"];
+     var shop=fruits.concat(vegetable);
+      var flag=Array.isArray(fruits);
+      document.write("<h1>"+ flag +"</h1>");
+      var flag1=fruits.valueOf();
+      document.write("<h1>"+ flag1 +"</h1>");
+      var flag2=fruits.concat(vegetable);
+      document.write("<h1>"+ flag2 +"</h1>");
+      var flag3=fruits.join("/");
+      document.write("<h1>"+ flag3 +"</h1>");
+      var index=shop.indexOf("potato");
+      document.write("<h1>"+ index +"</h1>")   //if element is not present it will give -1 as output
+     
+     
+
+      var demo=fruits;     //demo isliye bana h ki demo wale array ke upar changes kare to fruits wale me chnage na ho
+      document.getElementById('res1').innerText=demo;
+      function pop(){
+        demo.pop();
+        document.getElementById('res1').innerText=demo;
+      } function push(){
+       //demo.push("orange");
+       var x=prompt("please enter a fruit"," ")
+        demo.push(x);
+        document.getElementById('res1').innerText=demo
+      }
+      function slice(){
+        //demo.slice(2); slice first and second
+         var x=demo.slice(1,2); // slice first and then two more
+        document.getElementById('res1').innerText=x;
+      } function reverse(){
+        demo.reverse();
+        document.getElementById('res1').innerText=demo
+        }
+        function shift(){
+        demo.shift(); //shift karta h element from start to the right to left when no element is left then undefined
+        document.getElementById('res1').innerText=demo
+        
+        }
+</script>
+</html>

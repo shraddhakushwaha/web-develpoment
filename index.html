@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style type="text/css">
+        .main1{
+            height: 250px;
+            width: 300px;
+            border: 2px solid rgb(57, 68, 226);
+            color: beige;
+            text-align: center;
+            font-size: 30px;
+            background-color: blue;
+        }
+        .main2{
+            height: 100px;
+            width: 100px;
+            border: 5px solid green;
+            border-bottom:5px solid black ;
+            border-top: 5px solid blue;  
+        }
+        .row1{
+            height: 80px;  /*  row1 we need to adjust height and width according to the parent  parent is 100px we need to subtract border radius to fit
+     child border inside parent */
+            width: 80px;
+            border: 5px solid yellow;
+            margin: 5px;    /*  now we have set the margin so we need to adjust it so width and height is adjusted according to margin
+                              earlier height and width was 90 90 
+                              which was due tp border no subtract 5+5 10(because of margin) from both height and width from h & w  */
+           /* margin:5px 10px 5px 3px;   clock wise top right bottom left
+              margin-top:,margin-bottom same fpor left and right can be used 
+              margin:
+              margin: 25px 50px 75px; top margin is 25px
+                                      right and left margins are 50px
+                                      bottom margin is 75px
+              margin: 25px 50px;     top and bottom margins are 25px
+                                      right and left margins are 50px
+              width: 300px;
+              margin: auto;  margin property to auto to horizontally center the element within its container. 
+              border: 1px solid red; 
+           */
+        }
+        .main4{
+            height: 380px;
+            width: 380px;
+            border:2px solid black;
+           margin:auto;  /*margin auto me width splecify karna important H */
+            font-size: 25px;
+            padding: 10px;
+           /* padding-left: ;
+            padding-bottom: ;
+            padding-top: ;
+            padding-right: ;
+            padding:50px 4px 6px 30px;*/
+        }
+        .row4{
+            width: 376px;
+            height:376px;
+            border-bottom:2px solid blue ;
+            border-top: 2px solid blue;
+            border-right: 2px solid blue;
+            border-left:2px solid blue ;
+        }
+       
+
+    </style>
+        
+    </style>
+   
+</head>
+<body>
+    <div class="main" style="font-size: 40px;"> <!--priority inline internal external-->
+        welcome
+    </div>  
+    <br/>
+    <br/>  
+    <div class="main1">
+        welcome
+    </div>
+    <br/>
+    <br/>
+    <div class="main2">
+       <div class="row1"> hello world</div>
+       
+    <br/>
+    <br/>
+     <div class="main4">
+        <div class="row4"> hello world</div>
+     </div>
+    </div>
+    
+</body>
+</html>

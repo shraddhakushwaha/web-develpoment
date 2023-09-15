@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/*transform property work only one time on a segment last applied transform will work*/
+        .transform{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255,0,0,0.5);
+            /*translate(x,y)
+              translateX(x)
+              translateY(y)
+             */
+            transform:translate(40px,40px)
+        }
+        .skew{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin:auto;
+            margin-top:100px;
+            /* skew( , ) deg rad turn
+               skewX()
+               skewY()*/
+            transform:skew(30deg,30deg);
+
+        }
+        .rotate{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin:auto;
+            margin-top:100px;
+            /* rotate( ) deg rad turn
+               rotateX()
+               rotateY()
+               rotateZ()*/
+            transform:rotate(30deg);
+
+        }
+        .scale{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin:auto;
+            margin-top:100px;
+            /* scale( , ) deg rad turn
+               scaleX()
+               scaleY()*/
+            transform:scale(1);
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="transform">
+    </div>
+    <div class="skew">
+    </div>
+    <div class="rotate">
+    </div>
+    <div class="scale">
+    </div>
+
+    
+</body>
+</html>

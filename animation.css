@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.style{
+    height: 250px;
+    width: 100%;
+   /* border: 2px solid black;*/
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.sun{
+    height:120px;
+    width:120px;
+    background-color: rgba(255,165,0,0,6);
+    border-radius: 50%;
+    position: absolute;
+    top:50px;
+    left:-20px;
+    animation: sun 6s ease-in-out;
+}
+
+ 
+.cloud1{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top:5px;
+    left:50px;
+    opacity: 0.8;
+    animation: cloud1 5s linear;
+}
+
+.cloud2{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top:50px;
+    left:500px;
+    opacity: 0.8;
+    animation: cloud2 4s ease;
+    animation-delay: 2s;
+}
+.cloud3{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top:5px;
+    right:-10px;
+    opacity: 0.8;
+    animation: cloud3 5s ease-out;
+    }
+@keyframes cloud1{
+    from{
+        top:5px;
+        left:px;
+    }
+    to{
+        top:5px;
+        left:110%;
+    }
+}
+@keyframes cloud2{
+    from{
+        top:50px;
+        left:500px;
+    }
+    to{
+        top:50px;
+        left:110%;
+    }
+}
+@keyframes cloud3{
+    from{
+        top:5px;
+        right:-10px;
+    }
+    to{
+        top:5px;
+        right:110%;
+    }
+}
+@keyframes sun{
+    from{
+        top:50px;
+        left:-20px;
+        background-color: rgba(255,165,0,0.4);
+    }
+    to{
+        top:15px;
+        left:110%;
+        background-color: rgba(255,165,0,1);
+    }
+}
+.main{
+    height: 700px;
+    width: 600px;
+    border: 2px solid black;
+    margin:auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;  /*can also enter value 100px 100px 150px 100px*/
+    grid-column-gap:10px; /* short hand grid-gap:10px 20px; row and then coloun*/
+    grid-row-gap:10px;
+}
+.main div{
+    padding: 50px;
+    font-size: 50px;
+    background: aqua;
+    border: 1px solid black;
+}
+#div{
+    grid-row-start: 1;
+    grid-row-end: 3; /* jitne row ko merge karna usse ek extra count dena padta h 2 merge so count 3*/
+}
+/*#div{
+    grid-column-start: 1;
+    grid-colunm-end: 3; /* jitne colunm ko merge karna usse ek extra count dena padta h 2 merge so count 3*/
+ .main1{
+    min-height:200px;
+    max-height: 400px ; /* min itna height and width rahega hi and phir content ke hisab se adjust karega but max height and width se jayda nahi bada nahi */
+    min-width:150px ;
+    max-width: 600px;
+    border: 2px solid black;
+ }

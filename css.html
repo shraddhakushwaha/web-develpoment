@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .main{
+            height: 500px;
+            width:500px;
+            background-color: antiquewhite;
+        }
+       #parent_row1{
+        height: 250px;
+        width:500px;
+        background-color: blueviolet;
+       }
+       #parent_row2{
+        height: 250px;
+        width:500px;
+        background-color: aquamarine;
+       }
+       .col1{
+        height: 250px;
+        width: 250px;
+        background-color: azure;
+        float: left;  }
+        .col2{
+        height: 250px;
+        width: 250px;
+        background-color:aqua;
+        float: left;  
+    }
+    .text{
+        height: 100px;
+        width: 550px;
+        background-color: blueviolet;
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        font-style: oblique;
+        text-transform: capitalize;
+        text-decoration: line-through;
+        word-spacing: 70px;
+        letter-spacing: 10px;
+    }
+    .para{
+        height: 300px;
+        width: 800px;
+        font-size: 30px;
+        background-color: blue;
+        color: beige;
+    }
+    .anchor{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<!--float either left or write from parent div if already koi left-->
+<!-- me hoga parent ke and next element ko hum left me karenge to vo uss element ke left me lagega-->
+
+<body>
+    <div class="main">
+        <div id="parent_row1">
+            <div class="col1">
+                home 
+            </div>
+            <div class="col2">
+                about
+            </div>
+        </div>
+        <hr/>
+        <div id="parent_row2">
+            <div class="col1">
+                gallery
+            </div>
+            <div class="col2">
+                contact
+            </div>
+        </div>
+    </div>
+    <div class="text">
+        hello shraddha
+    </div>
+    
+    <p class="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime culpa alias dicta deserunt necessitatibus est tempora quia expedita iusto ad, velit quaerat aliquid laborum sapiente non dolores itaque error incidunt!
+    </p>
+    <a href="" class="anchor">sys</a>
+</body>
+</html>

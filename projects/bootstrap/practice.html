@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+<body>
+    <!--by default jo display hota h bootstrap 5 me flex hota h-->
+    <div class="container-fluid">  <!--100% width-->
+    <div class="container">    <!--1170px -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">hello</div>
+            <div class="col-lg-3 col-md-6 col-12">hello1</div>
+            <div class="col-lg-3 col-md-6 col-12">hello2</div>
+            <div class="col-lg-3 col-md-6 col-12">hello3</div> 
+        </div>
+    </div>
+    </div> 
+    <!--auto coloumn layout-->
+    <div class="container">
+        <div class="row">
+        <div class="col-lg">hellok</div>
+        <div class="col-lg">bmkgm</div>
+        <div class="col-lg">klgjkf</div>
+        <div class="col-lg">kkfokro</div>
+        <div class="col-lg">gkgit</div>
+    </div>
+    </div>
+    </div>
+    <!--row column (if mere lo 10 ek line me nahi chahiye 
+        auto column layout me to agar 10 div h to 10 ek line me de dega 
+        but agar humko apane hisaab se karna h to row-col ka use karte h)--> 
+    <div class="container">
+        <div class="row row-cols-2 row-cols-lg-4"> <!--4 column in one line in desktop and 2 in other screen size-->
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col col-lg-6"> <!--3 wala 6 ka space lega-->
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">row column</div>
+            </div>
+        </div>
+</div>
+<!--gutter classes used to give padding and margin on the 
+    column margin from top and bottom
+     1rem=16px default padding 12px ka hota h gx0 to gx5 tak ka classes-->
+
+    <div class="container">
+        <div class="row"><!--gx-3 gy-4-->   <!--gx-0 no padding by deafult 12 px hota h padding (1.5 rem) gx-1(.25 rem )(4 px)
+            (2 px from left and 2 from right) gx-2(0.5) x represent left and right gx-3(1rem 16 px) -->
+            <!--gx-lg-5 ye bas desktop ki padding h har screen ka alag padding laga sakte h-->
+            <!--gy-4 margin from top and bottom isme divide by 2 nahi hota mean padding agar 12 px h to 6 from
+                 left and 6 from right -->
+            <div class="col-lg-6" style="background: yellow;">Lorem, ipsum dolor sit amet consectetur adipisicing
+                 elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                 ipsam, necessitatibus autem, in quia aliquam.
+                 Unde quae sint, sed numquam quaerat eius?
+                 Lorem, ipsum dolor sit amet consectetur adipisicing
+                 elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                 ipsam, necessitatibus autem, in quia aliquam.
+                 Unde quae sint, sed numquam quaerat eius?</div>
+            <div class="col-lg-6" style="background: pink;"><p class="p-5">Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?
+                Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?</p></div>
+            <div class="col-lg-6" style="background: green;">Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?
+                </div>
+            <div class="col-lg-6" style="background: red;"><p class= "pb-5 pt-4">orem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?</p>
+               </div>
+        </div>
+    </div>
+     <!--text related classes-->
+     <div class=" container">
+        <div class="row" style="padding: 50px 0px;">
+            <div class="col-12 text-center ">     <!--text-end(right),text-start(left waise by default left hota h )
+            text-ld-center (large screen me center hoga)
+        text-break(jab width complete hoga to break hojayega word)
+    text-uppercase(upperclass me hojayega) text-capitalize(start of every word capital)
+    font size hota h fs-1(2.5 rem) fs-2(2rem) fs-3(1.75rem)fs-4(1.5rem) fs-5(1rem) 
+    font weigth and itallic fw-bold fs-bolder fw-normal fw-lighter fw-light(fw-font weight) fst-italic fst-normal(fst-font style)-->
+                <p class="fs-1">welcome</p>
+            </div>
+        </div>
+     </div>
+
+     <!--utility classes (spacing)--gutter classes row ke through spacing de rahi the yaha kisi bhi element ko de skate h >
+    p-1 .25 rem 4 px,p-2 .5rem 8px,p-3 1rem 16px,p-4 1.5 rem 24px,p-5 3rem 48px same for margin ps-2(s-left) ,pe-2(e-right),pt,pb,
+    px-4(left right same padding),py-3(top bottom) same for margin ,p-0 padding 0px remove padding ps-0 same same margiin-->
+     
+
+    <!--background and gradient-->
+    <div class="container"  >
+        <div class="row">
+            <div class="col-lg-4 bg-primary border border-danger rounded-pill">Lorem, ipsum dolor sit amet consectetur adipisicing
+                 elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                 ipsam, necessitatibus autem, in quia aliquam.
+                 Unde quae sint, sed numquam quaerat eius?
+                 Lorem, ipsum dolor sit amet consectetur adipisicing
+                 elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                 ipsam, necessitatibus autem, in quia aliquam.
+                 Unde quae sint, sed numquam quaerat eius?</div>
+            <div class="col-lg-4 bg-secondary bg-gradient rounded-top"><p>Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?
+                Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?</p></div>
+                <!--hide element its hide from any device if wan tot show in desktop or mobile or not in any of them d-none hide from all device for
+                mobile hide d-sm-block-->
+            <div class="col-lg-4 bg-info rounded-circle  d-none d-sm-block"><div>Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Suscipit soluta iure itaque eius voluptate ipsa illum doloremque 
+                ipsam, necessitatibus autem, in quia aliquam.
+                Unde quae sint, sed numquam quaerat eius?</div>
+                <!--button classes--> <!---->
+                <a href="read more"  class="btn btn-warning"> read me</a>
+                <input type="button" class="btn btn-danger" value="read me" name="">
+                 <!--outline button--> <!--button sizes-->
+                <input type="button" class="btn btn-outline-danger btn-lg" value="read me" name="">
+                
+            </div>
+            
+        </div>
+  
+        <!--border and border-radius-->
+        <!--default 1 px hota h border,border-top,border-start,border-end,border-bottom
+        border-0,border-top-0 and so on border color-primary ,border color-secondary
+    border border-1,border border-2 and so on 
+border radius  class="rounded",rounded-top then same end ,start,circle,bottom,pill-->
+<!--text color-->
+<div class="container"></div>
+<div class="row">
+<div class="text-danger">hello</div>  <!--text-white-50 (50% fade ho jayega)-->
+</div>
+</div>
+
+<!--responsive image class-->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4"><img src="marveldisney.jpg" class="img-fluid img-thumbnail"></div>  <!--ing-fluid div ke according ajust kar deta h if image if big small image ko big nahi 
+        akrta div ke size ke according img-thumbnail ek frame ak effect deta h radius and border of 5px -->
+      <div class="col-lg-4"><img src="marveldisney.jpg" class="img-fluid"></div>
+      <div class="col-lg-4"><img src="marveldisney.jpg" class="img-fluid"></div>
+    </div>
+</div>
+<br/>
+
+<!--float and clear classes-->
+
+<div class="container">
+    <div class="border"> <!--float-lg-fluid float-none  for only desktop not for other window-->
+        <div class="float-start"> <!--border top ke hi rah jayega all side nhi 
+            rahega float karte h because float karte hi div apna area chor 
+            deta h jab tak direction nahi clear karenge mai row cover nahi karnege 
+            dunga row 0 height pe chali jayegi to uske liye float direction clear kar dena h -->
+        <input type="button" value="read more" name="" >
+        </div>
+        <div class="float-end"><input type="button" value="read more" name=""> </div> 
+        <div class="clearfix"></div>  <!--float ki direction ko clear kar deta h ek aur div banna h 
+        row pata chal jayega ki ab mere andar aur part nahi aayega-->
+    </div><!--float-start,float-end,float-none,clearfix-->
+</div>
+
+<!--card layout-->
+<div class="container-fluid mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <img src="marveldisney.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 py-5 ">
+                <div class="table-responsive">
+                <table class="table table-sm table-striped table-hover table-bordered border-success"> <!--table-primary   table-dark-striped table-borderless
+                table-sm(table ke suze ko chota kar deta h table-lg bada kar deta h)-->
+                <!--table responsive agar desktop ke h to ajust nahi akrna padega but agar
+                     phone me h to karna padega-->
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>email</th>
+                            <th>phone</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td class="table-dark">7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                        </tr>
+                        <tr>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                        </tr>
+                        <tr>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                            <td>testing</td>
+                            <td>testing@gmail.com</td>
+                            <td>7483931209</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--tables-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+</body> 
+</html>     

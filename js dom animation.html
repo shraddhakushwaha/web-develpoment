@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .yellow{
+            width: 400px;
+            height: 400px;
+            background: yellow;
+            position: relative;
+            margin-top: 50px;
+        }
+        #red{
+            width: 60px;
+            height: 60px;
+            background: red;
+            position: absolute;
+            top:0px;
+            left:0px;
+        }
+        .red2{
+            color:red;
+        }
+        .blue{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="yellow">
+        <div id="red"></div>
+    </div>
+    <button onclick="move()">click me</button>
+    <br/>
+    <br/>
+    <h1 id="res"></h1>
+    <button onclick="test()">click me</button>
+    <br/>
+    <br/>
+    please enter number between 5 and 10
+    <input type="" name="" id="num"/>
+    <button onclick="tests()"> click</button>
+    <h1 id="res1"></h1>
+<br/>
+<br/>
+<div id="test3" class="red2">
+    hello everyone
+</div>
+<button onclick="testing()">click </button>
+<h1 id="res1"></h1>
+</body>
+<script>
+    function move(){
+        var redElem=document.getElementById('red');
+        var pos=0;
+        var anim=setInterval(animate,5);
+        function animate(){
+            if(pos==340){
+                clearInterval(anim);
+            }
+            else{
+            pos++;
+            redElem.style.top=pos+'px';
+            redElem.style.left=pos +'px';
+            }
+        }
+    }
+
+    //exception try and catch throw and finaly
+    function test()
+    {
+      //alerf() // error will be shown in console
+      //try{
+       // alertf("hello!");
+     // }
+      //catch(err){
+       // document.getElementById('res').innerText=err;   //error
+      //}
+      try{
+        var number=5;
+        var x=number.toUpperCase();
+        alertf(x);
+      }
+      catch(err){
+        document.getElementById('res').innerText=err;  //error 
+      }
+    }
+
+    //try catch and throw(user jo error print karna chahta h to throw use kar sakta h )
+    var num= document.getElementById('num');
+    function tests(){
+        // alert(num.value);
+         var data =num.value;
+         try{ 
+            if(isNaN(data)){
+                throw "this is not a number";
+            }
+            else{
+                if(data<5 || data>10)
+                    {
+                        throw "number is out of range";
+                    }
+                
+                else{
+                    throw "";
+                }
+             }}
+        catch(errMess){
+            document.getElementById("res1").innerText=errMess;
+         }
+     
+ //try catch finally
+ finally{;
+    num.value="";   //input feild me number null ho jayega
+ }
+}
+
+//getAttribute and setAttribute
+function testing(){
+    var cls=document.getElementById('test3').getAttribute("class");
+    //document.getElementById("res1").innerText=cls;
+if(cls==="red2")
+{
+    document.getElementById("test3").setAttribute("class","blue");
+}
+else
+{
+    document.getElementById("test3").setAttribute("class","red2");
+}
+}
+</script>
+</html>
