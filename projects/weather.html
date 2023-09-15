@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+     } 
+     main{
+        background-color:#3498db;
+        height: 100vh ;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+     }
+     .row{
+        width:1000px;
+        margin: 10px;
+        display: flex;
+        align-items: center; /*vetically arrange*/
+        justify-content: center;/*horizontally arrange*/
+        font-size: 32px;
+        color: white;
+     }
+     #search{
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 25px;
+        border:none;
+        outline: none;
+        box-shadow:0px 0px 5px grey;
+     }
+    </style>
+</head>
+<body>
+    <main>
+<div class="row" style="text-align: center;">
+    <form action="">
+    <input type="search" id="search" placeholder="search by city name">
+    </form>
+</div>
+<div class="row" id="weather">
+   <!--<div>
+        <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="">
+    </div>
+    <div>
+        <h2>32 <sup>o</sup>C</h2>
+        <h4>clear</h4>
+    </div>-->
+</div>
+    </main>
+<script>
+const API_KEY=`3265874a2c77ae4a04bb96236a642d2f`
+//const API=` \https://api.openweathermap.org/data/2.5/weather?
+//q={city}&appid={API_KEY}&units=metric`
+//const IMG_URL=` \https://api.openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+const form=document.querySelector('form');
+const search=document.querySelector("#search");
+const weather=document.querySelector("#weather");
+const getWeather=async(city)=>{
+    weather.innerHTML=`<h2>Loading......<h2>`
+    const url=`https://api.openweathermap.org/data/2.5/weather?
+q=${city}&appid=${API_KEY}&units=metric`
+    const response=await fetch(url);
+    const data=await response.json()
+    return showWeather(data);
+}
+const showWeather=(data)=>{
+    if(data.cod=="404"){
+        weather.innerHTML=`<h2>City not found<h2>`
+            return;
+    }
+    else{
+    weather.innerHTML=`<div>
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+    </div>
+    <div>
+        <h2>${data.main.temp} <sup>o</sup>C</h2>
+        <h4>${data.weather[0].main}</h4>
+    </div>`
+}
+}
+form.addEventListener("submit",function(event){
+    getWeather(search.value)
+event.preventDefault(); //form ka natural hota h jaise hi form submit hota h vo load ho jata h and preventdefault iss prevent karta h
+}
+)
+</script>
+</body>
+</html>

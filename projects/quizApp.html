@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #3498db;
+            font-family: 'Roboto',sans-serif;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            flex-direction: column;
+        }
+        #box{
+            width: 40%;
+            padding :15px;
+            box-shadow: 0px 0px 5px gray;
+            background: white;
+            border-radius:5px ;
+        }
+        .row{
+            width: 100%;
+            margin:2rem;
+            margin-left:0px;
+        }
+        .btn{
+            width:100%;
+            padding:5px;
+            color: white;
+            font-size:20px;
+            border-radius: 5px;
+            background-color: #3498db;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="box">
+            <h2 id="quesbox">1) This is the dummy question</h2>
+            <div class="row">
+                <!--linking input and lable using id and for-->
+                <input class="options" id="Option1" type="radio" value="a"  name="option" >  <!--name same rakhne se sare option nahi select hota-->
+                <label for="Option1"> Option 1</label>
+            </div>
+            <div class="row">
+                <input class="options" id="Option2" type="radio" value="b" name="option">
+                <label for="Option2">Option 2</label>
+            </div>
+            <div class="row">
+                <input class="options" id="Option3" type="radio" value="c" name="option">
+                <label for="Option3">Option 3</label>
+            </div>
+            <div class="row">
+                <input class="options"  id="Option4" type="radio" value="d" name="option">
+                <label for="Option4">Option 4</label>
+            </div>
+            <button class="btn" onclick="submitQuiz()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        const questions=[{
+            'ques':'which of the following is markup language?',
+            'a':'HTML',
+            'b': 'CSS',
+            "c":"JavaScript",
+            'd':'PHP',
+            'correct':'a'
+        },
+        {
+        'ques':'In hich year javasccript was launched?',
+            'a':'1996',
+            'b': '1995',
+            "c":"1994",
+            'd':'None of the above',
+            'correct':'b'
+        }, 
+       {
+       'ques':'What does CSS stand for?',
+            'a':'Hypertext Markup Language',
+            'b': 'Cascading Style Sheet',
+            "c":"Jason Object Notation",
+            'd':'Helicopters Terminals Motorboats Lamborginis',
+            'correct':'b'
+       }
+        ]
+        let index=0;
+        let total=questions.length;
+        let right=0;
+        let wrong=0;
+        const quesbox=document.getElementById("quesbox");
+        const options=document.querySelectorAll('.options')
+        const loadQuestion=()=>
+        {   //== in JavaScript is used for comparing two variables, 
+           // but it ignores the datatype of variable. === is used for
+           //  comparing two variables, but this operator 
+           // also checks datatype and compares two values. 
+             if(index===total){ 
+              return endquiz()
+             }
+            reset();
+            const data=questions[index];
+           // console.log(data);
+           quesbox.innerText=`${index+1}) ${data.ques}`;
+           options[0].nextElementSibling.innerText=data.a;  //options ka next element label to uske inner text me data.a
+           options[1].nextElementSibling.innerText=data.b;
+           options[2].nextElementSibling.innerText=data.c;
+           options[3].nextElementSibling.innerText=data.d;
+         }
+         const submitQuiz=()=>{
+            const data=questions[index];
+             const ans=getanswer();
+                if(ans===data.correct){
+                    right++;
+                }else{
+                    wrong++;
+                }
+               index++;
+               loadQuestion();
+             }
+         
+         const getanswer=()=>{
+            let answer;
+            options.forEach((input)=>{
+                if(input.checked)
+                { answer= input.value;  //value ki a h b h kaun sa option h
+                    // console.log('yes');
+                }
+            })
+            return answer;
+         }
+         const reset=()=>{
+            options.forEach((input)=>{
+                input.checked=false;
+            })
+         }
+
+         const endquiz=()=>{
+             document.getElementById('box').innerHTML=`<div style="text-align:center">
+             <h3>Thank you for palying </h3>
+             <h2> ${right} /${total} are correct</h2> </div>`;
+         }
+        loadQuestion();
+
+    </script>
+</body>
+</html>

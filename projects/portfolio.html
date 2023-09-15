@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display&family=Poppins:wght@700&display=swap');
+        *{
+            padding:0;
+            margin:0;
+            font-family:'montserrat';
+            box-sizing: border-box;
+        }
+        body,html{
+            width: 100%;
+            height:100%;
+            background-color:#ececec;
+            background-color: aqua;
+        }
+        #background{
+            width:100%;
+            height: 100vh;
+            background-color: #fff;
+            transition: all cubic-bezier(0.19,1,0,.22,1) .5s;
+        }
+        nav{
+            width: 90%;
+            height:80px;
+            display: flex;
+            align-items: center;  /*vertical center allign justify-content: horizontal*/ ;
+            justify-content:space-between;
+            margin:0 auto;
+        }
+       nav img{
+        width:110px;
+        }
+        nav #links{
+            display: flex;
+            align-items: center;
+        }
+        nav #links a {
+            margin-left: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            color: black;
+            opacity: .6;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+        nav #links i{
+            margin-left:50px;
+        }
+        nav #links a:nth-child(2){
+            opacity: .2;
+        }
+        #section{
+            display: flex;
+            width:100%;
+            height:calc(100%-80px);
+        }
+        #left{
+            width:50%;
+            height: 100%;
+            padding:100px;
+        }
+        #left #smline{
+            width:90px;
+            height:3px;
+            background-color: black;
+            margin-top:100px ;
+        }
+        #left h4{
+            font-family:'montserrat';
+            font-size: 50px;
+            margin-top:10px
+        }
+       #left img{
+        width: 650;
+        margin-top: 30px;
+       } 
+       #left>h5{/*'>' lagane se jo h5 left ke directly andar in wahi target hog*/
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing:12px;
+        margin-top: 20px;
+        margin-left:30px;
+        font-weight: 700;
+        color:#d1d1d1;
+       }
+       #left>h5 span{
+        color:rgb(100,154,172);
+       }
+       #playbtn img{
+        width:100px;
+       }
+       #playbtn{
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+       }
+       #playbtn h5{
+        margin-top: 20px;
+        letter-spacing: 10px;
+        color: rgb(48, 42, 42);
+        text-transform: uppercase;
+        opacity:.8;
+        margin-left: 20px;
+       }
+       .bold{
+        font-weight: 800;
+        opacity:1;
+       }
+       #contact{
+        margin-top:200px;
+       }
+       #contact h4{
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        font-size:12px;
+        font-weight: 700;
+        opacity:.8;
+        margin-bottom: 20px;
+       }
+       #contact h6{
+            margin-top:10px;
+            font-size: 12px;
+       }
+       #contact span{
+        color:#04c2c7
+       }
+       #right{
+        width:50%;
+        height:100%;
+       }
+       #splash{
+        position: absolute;
+        left:-60px;
+        top:70%;
+        width: 150px;
+       }
+       /* animation*/
+       #loader{
+        
+       }
+    </style>
+</head>
+<body>
+    <div id="loader">
+
+    </div>
+    <div id="background">
+        <nav>
+            <img src="./portfolio/logo.png">
+            <div id="links">
+                <a href="#">Home </a>
+                <a href="#">Contact</a>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i id="menu" class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div id="section">
+            <img id="splash" src="./portfolio/rightSplash.png">
+            <div id="left">
+               <div id="smline"></div>
+                  <h4>Hello, I am 👋</h4>
+                  <img src="./portfolio/name.png">
+                  <h5>A designer from <span id="lblue">ukraine.</span></h5>
+                <div id="playbtn">
+                  <img src="./portfolio/playButton.png" alt="">
+                  <h5>see my <span class="bold">work profile</span></h5>
+                </div>
+                <div id="contact">
+                  <h4>Contact me</h4>
+                  <h6>Email : <span>someone@gmail.com</span></h6>
+                  <h6>Contact Number :<span>+91-123456789</span></h6>
+                </div>
+            </div>
+            <div id="right">
+               <img src="./portfolio/mainImage.png">
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/9c96accc29.js" crossorigin="anonymous"></script>
+    <script>
+        var menu=document.querySelector("#menu");
+        var bg=document.querySelector("#background");
+        menu.addEventListener("click",function(){
+            bg.style.transform='scale(.8)';
+            bg.style.borderRadius='10px';
+            bg.style.boxShadow='0 150px 45px -100px rgba(0,0,0,.2)'
+        })
+    </script>
+</body>
+</html>
